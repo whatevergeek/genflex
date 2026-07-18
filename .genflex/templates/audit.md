@@ -5,17 +5,26 @@
 
 <!--
 Instructions for the orchestrator:
-- This file is append-only. Never overwrite it.
-- Each entry must include stage name, ISO timestamp, complete raw user input,
-  AI response summary, and context.
-- Separate entries with "---".
+- Keep this log append-only. Do not rewrite, reorder, or delete existing entries.
+- If an entry needs correction, append a new entry that references the earlier entry ID and explains the correction.
+- Begin each entry with the next sequential `Entry XXX` identifier.
+- Write each entry property on its own line.
+- Include the entry ID, stage, ISO timestamp, complete raw user input, AI response summary, and context.
+- Separate entries with `---`.
 -->
 
-## `<Stage or Interaction Name>`
+## Entry 001 - `<Stage or Interaction Name>`
+
+**Entry ID**: `001`
+
+**Stage**: `<stage or interaction name>`
 
 **Timestamp**: `<ISO 8601 timestamp>`
+
 **User Input**: "<complete raw user input — never summarized>"
+
 **AI Response**: "<AI action or decision summary>"
+
 **Context**: `<stage, action, or decision made>`
 
 ---
