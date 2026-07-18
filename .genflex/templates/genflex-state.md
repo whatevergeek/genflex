@@ -1,4 +1,4 @@
-# GenFlex Workflow State
+# GenFlex Phase Tracking
 
 **Started**: `<ISO timestamp>`
 **Updated**: `<ISO timestamp>`

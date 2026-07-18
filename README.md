@@ -1,10 +1,10 @@
 # GenFlex
 
-GenFlex is a lightweight orchestrated workflow framework. The central `/genflex` or `using genflex` trigger loads the framework, understands the request, and dispatches it to the appropriate feature:
+GenFlex is a lightweight set of facilities that can support any SDD workflow. The central `/genflex` or `using genflex` trigger loads the framework, understands the request, and dispatches it to the appropriate facility:
 
-- optional group review with specialist roles;
-- progress tracking for long-running work; or
-- decision and activity logging.
+- review of documents or code changes by relevant specialist roles;
+- ad hoc tracking of user-defined phases; or
+- ad hoc logging of changes, decisions, review results, and activity.
 
 It uses Markdown files, so it has no package or installation requirements.
 
@@ -33,7 +33,7 @@ Start a request with either `using genflex` or `/genflex`. Capitalization does n
 
 For state or resume requests, the trigger checks `genflex-docs/genflex-state.md` for unfinished work by reading its status table. It then dispatches to the instructions for the requested task. GenFlex uses one AI by default. A group review starts only when party, roundtable, or multi-agent review is explicitly requested.
 
-GenFlex does not start or manage the underlying chat session. The AI tool starts the session; GenFlex only loads its instructions and manages workflow documents within that session.
+GenFlex does not start or manage the underlying chat session. The AI tool starts the session; GenFlex only loads its instructions and manages its optional support documents within that session.
 
 ## Options
 
@@ -41,7 +41,7 @@ Options are plain text in the same chat message as either trigger. Put them afte
 
 ### `--docs-path <path>`
 
-Use this when state and audit files should live somewhere other than the default `genflex-docs/` directory. It applies to state tracking and audit logging. The path is a directory relative to the project root unless your AI tool specifies otherwise.
+Use this when phase-tracking and audit files should live somewhere other than the default `genflex-docs/` directory. It applies to phase tracking and audit logging. The path is a directory relative to the project root unless your AI tool specifies otherwise.
 
 ```text
 using genflex --docs-path notes/genflex, resume the implementation exercise
