@@ -8,8 +8,8 @@ Copy these into a project:
 
 ```text
 .genflex/                         # golden source
-pointer-skills/agents/genflex/SKILL.md  # pointer for agent-based tooling
-pointer-skills/cline/genflex/SKILL.md   # pointer for Cline
+.agents/skills/genflex/SKILL.md   # pointer for agent-based tooling
+.cline/skills/genflex/SKILL.md    # pointer for Cline
 ```
 
 Keep `.genflex/` at the project root. The pointer may also be copied into another compatible tooling skill directory.
