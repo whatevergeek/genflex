@@ -18,6 +18,14 @@ Copy these files and directories into the root of your project:
 .cline/skills/genflex/SKILL.md    # entry point for Cline
 ```
 
+From the directory containing the `genflex` repository:
+
+```bash
+cp -r genflex/.genflex <project-root>/
+cp -r genflex/.agents <project-root>/
+cp -r genflex/.cline <project-root>/
+```
+
 Keep `.genflex/` at the project root. If you use another AI tool, copy the same `SKILL.md` entry point into that tool's skill directory.
 
 ## Use
@@ -28,8 +36,21 @@ Start a request with either `using genflex` or `/genflex`. Capitalization does n
 - `/genflex, start party mode to review this PRD`
 - `/genflex invoke party to review this PRD`
 - `/genflex invoke party, ask the Architect and Senior Developer to review the implementation plan`
-- `using genflex, resume the implementation exercise`
+- `/genflex invoke party, ask the Senior Developer and Test Architect to review these code changes`
+- `using genflex, resume phase tracking`
 - `using genflex, log this decision`
+
+The trigger dispatches to one of three independent facilities:
+
+```text
+/genflex or using genflex
+          │
+          ▼
+  ┌───────┼────────┐
+  ▼       ▼        ▼
+Agent   Phase    Audit
+review  tracking logging
+```
 
 For state or resume requests, the trigger checks `genflex-docs/genflex-state.md` for unfinished work by reading its status table. It then dispatches to the instructions for the requested task. GenFlex uses one AI by default. A group review starts only when party, roundtable, or multi-agent review is explicitly requested.
 
@@ -44,7 +65,7 @@ Options are plain text in the same chat message as either trigger. Put them afte
 Use this when phase-tracking and audit files should live somewhere other than the default `genflex-docs/` directory. It applies to phase tracking and audit logging. The path is a directory relative to the project root unless your AI tool specifies otherwise.
 
 ```text
-using genflex --docs-path notes/genflex, resume the implementation exercise
+using genflex --docs-path notes/genflex, resume phase tracking
 using genflex, log this decision --docs-path notes/genflex
 ```
 
