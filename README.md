@@ -1,6 +1,6 @@
 # GenFlex
 
-GenFlex is a lightweight set of facilities that can support any SDD workflow. The central `/genflex` or `using genflex` trigger loads the framework, understands the request, and dispatches it to the appropriate facility:
+GenFlex is a lightweight, flexible, and adaptive set of facilities that aims to support the user's own SDD workflow. The central `/genflex` or `using genflex` trigger loads the toolkit, understands the request, and dispatches it to the appropriate facility:
 
 - review of documents or code changes by relevant specialist roles;
 - ad hoc tracking of user-defined phases; or
