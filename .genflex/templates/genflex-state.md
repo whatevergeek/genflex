@@ -1,14 +1,10 @@
 # GenFlex Workflow State
+
 **Started**: `<ISO timestamp>`
 **Updated**: `<ISO timestamp>`
-**Status**: `in-progress` | `complete`
-**Current Task**: `<brief description of current focus>`
+**General Status**: `<overall progress summary>`
+**Next Action**: `<next phase or action>`
 
-## Completed Items
-- [ ] (none yet)
-
-## Pending Items
-- [ ] (none yet)
-
-## Decision Log
-- (none yet)
+| Item | Status |
+|---|---|
+| `<user-provided phase or work item>` | `PENDING` |
