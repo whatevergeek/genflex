@@ -26,10 +26,12 @@ Start a request with either `using genflex` or `/genflex`. Capitalization does n
 
 - `using genflex, start party mode to review this PRD`
 - `/genflex, start party mode to review this PRD`
+- `/genflex invoke party to review this PRD`
+- `/genflex invoke party, ask the Architect and Senior Developer to review the implementation plan`
 - `using genflex, resume the implementation exercise`
 - `using genflex, log this decision`
 
-GenFlex checks `genflex-docs/genflex-state.md` for unfinished work. It then opens the instructions for the requested task. GenFlex uses one AI by default. A group review starts only when party mode or multi-agent review is explicitly requested.
+For state or resume requests, GenFlex checks `genflex-docs/genflex-state.md` for unfinished work by reading its status table. It then opens the instructions for the requested task. GenFlex uses one AI by default. A group review starts only when party, roundtable, or multi-agent review is explicitly requested.
 
 GenFlex does not start or manage the underlying chat session. The AI tool starts the session; GenFlex only loads its instructions and manages workflow documents within that session.
 
@@ -62,6 +64,10 @@ genflex-docs/genflex-state.md
 genflex-docs/audit.md
 ```
 
-By default, GenFlex creates documents in `genflex-docs/`. To customize a project, add templates under `<docs-path>/templates/` and review roles under `<docs-path>/agents/`. These project files take precedence over the defaults in `.genflex/`.
+By default, GenFlex creates documents in `genflex-docs/`. To customize a project, add templates under `<docs-path>/templates/` and review roles under `<docs-path>/agents/`. These project files take precedence over the defaults in `.genflex/`. When `--docs-path` is omitted, `<docs-path>` means `genflex-docs/`.
 
-GenFlex uses one AI for normal requests. In party mode, it chooses 2–4 relevant roles or uses the roles you name in the request. Model selection remains the responsibility of the host AI tool.
+GenFlex uses one AI for normal requests. In party mode, it chooses 2–4 relevant roles or uses only the roles you name in the request. The default Architect is Winston and the default Senior Developer is Amelia. If a named role does not match an available agent, GenFlex asks you to choose from the available roles. If the host cannot run separate agents, GenFlex presents the selected roles sequentially in the current AI session and labels the discussion as simulated. The orchestrator loads the artifact being reviewed before requesting opinions. Model selection remains the responsibility of the host AI tool.
+
+After party mode is invoked, follow-up messages in the same AI session stay in party mode. Do not repeat the `/genflex invoke party` trigger unless the host has lost the conversation context or you intentionally want to restart the party discussion.
+
+Audit logs preserve raw user input unless sensitive information must be removed. Secrets, credentials, private personal data, and similar sensitive content are redacted and the redaction is noted in the entry.

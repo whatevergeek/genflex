@@ -8,8 +8,8 @@ If the audit file does not exist, choose `<docs-path>/templates/audit.md`, then 
 
 ## Record
 
-Append, never rewrite, reorder, or delete prior entries. Begin each entry with the next sequential `Entry XXX` identifier and write each property on its own line. Every entry must include the entry ID, stage, ISO timestamp, complete raw user input (never summarized), AI response/action summary, and context. Capture user decisions and party deliberations faithfully, distinguishing facts from recommendations. For a duration entry include start, end, and elapsed time if known. Corrections append a new entry referencing the original entry ID rather than deleting history.
+Append, never rewrite, reorder, or delete prior entries. Begin each entry with the next sequential `Entry XXX` identifier and write each property on its own line. Every entry must include the entry ID, stage, ISO timestamp, raw user input, AI response/action summary, and context. Preserve the complete raw input unless it contains secrets, credentials, private personal data, or other sensitive material; redact only the sensitive portions and note that redaction occurred. Capture user decisions and party deliberations faithfully, distinguishing facts from recommendations. For a duration entry include start, end, and elapsed time if known. Corrections append a new entry referencing the original entry ID rather than deleting history.
 
 Audit logging is independent of party mode: logging a review does not start another review. Keep entries concise and link to stable project paths rather than copying large documents.
 
-Log every user input with its timestamp and complete raw text. Log every approval prompt before asking it, and log the user's response after receiving it. Include the stage or interaction context for every entry.
+Log every user input with its timestamp and raw text, applying the redaction rule above. Log every approval prompt before asking it, and log the user's response after receiving it. Include the stage or interaction context for every entry.

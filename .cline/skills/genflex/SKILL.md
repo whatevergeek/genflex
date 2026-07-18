@@ -11,9 +11,9 @@ This is a context loader, not an agent persona. The golden source is `.genflex/`
 
 1. Verify `{project-root}/.genflex/` exists. If missing, ask the user to copy it from the genflex repository and stop.
 2. Read `--docs-path <path>` from the same user message to change the generated-documents directory. Model selection is handled by the host AI tool.
-3. Resolve the docs path to `{project-root}/genflex-docs/`, or the path supplied with `--docs-path <path>`. If `genflex-state.md` exists and has status `in-progress`, present its current state and ask whether to resume. A `complete` state starts fresh.
+3. Resolve the docs path to `{project-root}/genflex-docs/`, or the path supplied with `--docs-path <path>`. For a state or resume request, inspect `genflex-state.md` if it exists. If it has any `PENDING`, `IN_PROGRESS`, or `BLOCKED` items, present the current state and ask whether to resume. Treat a state whose items are all `DONE` as complete; start a new state only when the user asks to start new work. Do not block an unrelated party or audit request on workflow state.
 4. Parse the case-insensitive text after either `using genflex` or `/genflex`:
-   - an explicit `party mode` or `multi-agent` request → read `.genflex/skills/genflex-party.md`.
+   - an explicit `party`, `party mode`, `roundtable`, `invoke party`, or `multi-agent` request → read `.genflex/skills/genflex-party.md`.
    - `state`, `track`, or `resume` → read `.genflex/skills/genflex-state.md`.
    - `audit` or `log` → read `.genflex/skills/genflex-audit.md`.
    - unclear intent → present the available features and ask what the user wants.
