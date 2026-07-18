@@ -16,7 +16,6 @@ This is a context loader, not an agent persona. The golden source is `.genflex/`
    - an explicit `party mode` or `multi-agent` request → read `.genflex/skills/genflex-party.md`.
    - `state`, `track`, or `resume` → read `.genflex/skills/genflex-state.md`.
    - `audit` or `log` → read `.genflex/skills/genflex-audit.md`.
-   - `new session` or `start fresh` → initialize state and audit files, then offer the features.
    - unclear intent → present the available features and ask what the user wants.
 5. Dispatch immediately to the selected golden-source skill. Use one AI by default; do not start party mode from a general review request unless party mode is explicitly named.
 

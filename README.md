@@ -28,9 +28,10 @@ Start a request with either `using genflex` or `/genflex`. Capitalization does n
 - `/genflex, start party mode to review this PRD`
 - `using genflex, resume the implementation exercise`
 - `using genflex, log this decision`
-- `using genflex, start a new session`
 
 GenFlex checks `genflex-docs/genflex-state.md` for unfinished work. It then opens the instructions for the requested task. GenFlex uses one AI by default. A group review starts only when party mode or multi-agent review is explicitly requested.
+
+GenFlex does not start or manage the underlying chat session. The AI tool starts the session; GenFlex only loads its instructions and manages workflow documents within that session.
 
 ## Options
 
@@ -38,7 +39,7 @@ Options are plain text in the same chat message as either trigger. Put them afte
 
 ### `--docs-path <path>`
 
-Use this when state and audit files should live somewhere other than the default `genflex-docs/` directory. It applies to state tracking, audit logging, and new-session setup. The path is a directory relative to the project root unless your AI tool specifies otherwise.
+Use this when state and audit files should live somewhere other than the default `genflex-docs/` directory. It applies to state tracking and audit logging. The path is a directory relative to the project root unless your AI tool specifies otherwise.
 
 ```text
 using genflex --docs-path notes/genflex, resume the implementation exercise
