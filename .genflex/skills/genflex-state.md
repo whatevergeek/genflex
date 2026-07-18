@@ -1,6 +1,6 @@
 # genflex-state — workflow state tracking
 
-Use for state, tracking, resume, or long-running work. Default docs path is `<project-root>/sdd-docs/`; `--docs-path <path>` overrides it.
+Use for state, tracking, resume, or long-running work. Default docs path is `<project-root>/genflex-docs/`; `--docs-path <path>` overrides it.
 
 ## Initialize
 

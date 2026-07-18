@@ -1,6 +1,6 @@
 # genflex-audit — append-only activity log
 
-Use for audit, log, activity, decision, deliberation, review, or work-duration entries. Default output is `<project-root>/sdd-docs/audit.md`; `--docs-path <path>` changes the directory.
+Use for audit, log, activity, decision, deliberation, review, or work-duration entries. Default output is `<project-root>/genflex-docs/audit.md`; `--docs-path <path>` changes the directory.
 
 ## Initialize
 

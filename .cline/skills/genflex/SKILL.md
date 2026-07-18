@@ -10,7 +10,7 @@ This is a context loader, not an agent persona. The golden source is `.genflex/`
 ## On Activation
 
 1. Verify `{project-root}/.genflex/` exists. If missing, ask the user to copy it from the genflex repository and stop.
-2. Resolve the docs path to `{project-root}/sdd-docs/`, or the path supplied with `--docs-path <path>`. If `genflex-state.md` exists and has status `in-progress`, present its current state and ask whether to resume. A `complete` state starts fresh.
+2. Resolve the docs path to `{project-root}/genflex-docs/`, or the path supplied with `--docs-path <path>`. If `genflex-state.md` exists and has status `in-progress`, present its current state and ask whether to resume. A `complete` state starts fresh.
 3. Parse the case-insensitive text after `using genflex`:
    - `party mode` or `review` → read `.genflex/skills/genflex-party.md`.
    - `state`, `track`, or `resume` → read `.genflex/skills/genflex-state.md`.
