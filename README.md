@@ -8,6 +8,18 @@ GenFlex is a lightweight, flexible, and adaptive set of facilities that aims to 
 
 It uses Markdown files, so it has no package or installation requirements.
 
+## Project Media
+
+![GenFlex overview: agent review, phase tracking, and audit logging](images/genflex_media_01.png)
+
+*GenFlex provides flexible support facilities for the user's own SDD workflow.*
+
+## AI-assisted development
+
+GenFlex was designed, implemented, reviewed, and documented with OpenAI Codex. Codex helped translate the requirements into a minimal Markdown-based support layer, refine the trigger and facility behavior, review the repository from multiple specialist perspectives, and improve the README and project documentation.
+
+The project was developed with human review throughout: the user defined the scope, approved major design decisions, reviewed the resulting behavior, and retained control of the final workflow.
+
 ## Install
 
 Copy these files and directories into the root of your project:
